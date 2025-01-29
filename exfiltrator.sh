@@ -36,7 +36,7 @@ for dat in $(cat data)
 do
     ./nslookup $dat.${DOMAIN}
     ((counter ++))
-    if [[ counter -eq 3 ]]
+    if [[ counter -eq 5 ]]
     then
         break
     fi
